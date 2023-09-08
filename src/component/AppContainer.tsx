@@ -144,7 +144,7 @@ const AppContainer: FC<{ children: ReactNode; className?: string }> = ({
       <div className={borderTopCss}></div>
       <div className={borderBottomCss}></div>
       <div className={contentContainerStyle + " " + className}>
-        <Container maxW="container.md">{children}</Container>
+        <Container maxW="container.lg">{children}</Container>
       </div>
     </>
   );
