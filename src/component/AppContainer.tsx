@@ -28,6 +28,7 @@ const borderTopCss = css`
     align-items: center;
     font-family: sans-serif;
     font-weight: bold;
+    margin-top: 1rem;
   }
 
   &::before {
@@ -88,7 +89,7 @@ const borderBottomCss = css`
     font-family: sans-serif;
     font-weight: bold;
     margin-left: auto;
-    margin-top: calc(40vh - 2rem);
+    margin-top: calc(40vh - 12rem);
     display: none;
   }
 

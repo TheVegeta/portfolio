@@ -12,17 +12,58 @@ const containerStyle = css`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-height: 80vh;
+  min-height: 60vh;
+
+  & {
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 992px) {
+    & {
+      margin-top: unset;
+    }
+  }
+`;
+
+const bottomContainerStyle = css`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 60vh;
+
+  @media (max-width: 992px) {
+    & {
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+    }
+  }
+`;
+
+const gridStyle = css`
+  & {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  @media (min-width: 992px) {
+    & {
+      display: grid !important;
+      flex-direction: unset !important;
+    }
+  }
 `;
 
 const App = () => {
   const [currIndex, setCurrIndex] = useState(0);
 
-  const changeCurrIndex = (id: number) => () => setCurrIndex(id);
+  const changeCurrIndex = (id: number) => () => {
+    window.scrollTo({ top: -100, behavior: "smooth" });
+    setCurrIndex(id);
+  };
 
   return (
     <AppContainer className={containerStyle}>
-      <Grid templateColumns="repeat(12, 1fr)">
+      <Grid templateColumns="repeat(12, 1fr)" className={gridStyle}>
         <GridItem colSpan={8} className={containerStyle}>
           {currIndex === 0 && <AboutMe />}
           {currIndex === 1 && <GalleryApp />}
@@ -33,11 +74,13 @@ const App = () => {
         <GridItem
           sx={{
             display: "flex",
-            justifyContent: "center",
+            flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
+            marginTop: "2rem",
           }}
           colSpan={4}
-          className={containerStyle}
+          className={bottomContainerStyle}
         >
           <Text fontSize="3rem">Projects</Text>
           <Text
