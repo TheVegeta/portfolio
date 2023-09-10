@@ -23,6 +23,9 @@ const containerStyle = css`
       margin-top: unset;
     }
   }
+
+  @media (min-width: 1400px) {
+  }
 `;
 
 const bottomContainerStyle = css`
@@ -36,6 +39,9 @@ const bottomContainerStyle = css`
       align-items: flex-start !important;
       justify-content: flex-start !important;
     }
+  }
+
+  @media (min-width: 1400px) {
   }
 `;
 

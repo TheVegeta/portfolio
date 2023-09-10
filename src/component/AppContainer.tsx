@@ -99,6 +99,9 @@ const borderBottomCss = css`
     }
   }
 
+  @media (min-width: 1400px) {
+  }
+
   &::before {
     content: "";
     position: absolute;
