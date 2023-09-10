@@ -1,5 +1,3 @@
-import "@fontsource/sriracha";
-
 import {
   ChakraProvider,
   Container,
