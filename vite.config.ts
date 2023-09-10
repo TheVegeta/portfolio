@@ -5,6 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   json: { stringify: true },
+  base: "/portfolio-website/",
   build: {
     rollupOptions: {
       output: {
