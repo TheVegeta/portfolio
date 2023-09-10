@@ -16,11 +16,12 @@ const TypedStyleCss = css`
   }
 `;
 
-const textStyle = css`
-  width: 85%;
+const linkContainerStyle = css`
+  display: flex;
+  flex-wrap: wrap;
 
-  @media (min-width: 992px) {
-    width: unset;
+  @media (min-width: 576px) {
+    gap: 1rem;
   }
 `;
 
@@ -36,17 +37,17 @@ const InvoiceApp = () => {
         // @ts-ignore
         speed={250}
       />
-      <Text className={textStyle} py="2">
+      <Text py="2">
         Basically, I built this application to challenge myself on designing
         lavel.
       </Text>
-      <Text className={textStyle} py="2">
+      <Text py="2">
         This challenge is provided by the front-end mentor on their website. I
         have implemented invoice management with inventory and completed this
         challenge by using Mantine Ui, Styled Component, Formik,formik and
         zustand.
       </Text>
-      <Box display="flex" gap="1rem">
+      <Box className={linkContainerStyle}>
         <Text
           as="a"
           href="https://github.com/TheVegeta/invoice-app"
