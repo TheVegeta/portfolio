@@ -40,6 +40,8 @@ const GalleryApp = () => {
       <Box display="flex" gap="1rem">
         <Text
           as="a"
+          href="https://github.com/TheVegeta/gallary-app-next"
+          target="_blank"
           fontSize="1.3rem"
           py="2"
           display="flex"
@@ -47,7 +49,21 @@ const GalleryApp = () => {
           gap="0.5rem"
         >
           <FaGithub />
-          Github
+          Github Next.js
+        </Text>
+
+        <Text
+          as="a"
+          href="https://github.com/TheVegeta/gallary-app-api"
+          target="_blank"
+          fontSize="1.3rem"
+          py="2"
+          display="flex"
+          alignItems="center"
+          gap="0.5rem"
+        >
+          <FaGithub />
+          Github Graphql
         </Text>
 
         <Text
