@@ -1,7 +1,12 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
 import { css } from "@emotion/css";
-import { TypeAnimation } from "react-type-animation";
+import { useState } from "react";
+import AboutMe from "./component/AboutMe";
 import AppContainer from "./component/AppContainer";
+import GalleryApp from "./component/GalleryApp";
+import InvoiceApp from "./component/InvoiceApp";
+import PixelLite from "./component/PixelLite";
+import PixelPace from "./component/PixelPace";
 
 const containerStyle = css`
   display: flex;
@@ -10,49 +15,63 @@ const containerStyle = css`
   min-height: 80vh;
 `;
 
-const TypedStyleCss = css`
-  display: block;
-  font-size: 2.5rem;
-
-  @media (min-width: 768px) {
-    font-size: 5rem;
-  }
-
-  @media (min-width: 992px) {
-    font-size: 5rem;
-  }
-`;
-
 const App = () => {
+  const [currIndex, setCurrIndex] = useState(0);
+
+  const changeCurrIndex = (id: number) => () => setCurrIndex(id);
+
   return (
     <AppContainer className={containerStyle}>
       <Grid templateColumns="repeat(12, 1fr)">
         <GridItem colSpan={8} className={containerStyle}>
-          <TypeAnimation
-            className={TypedStyleCss}
-            sequence={["Welcome."]}
-            wrapper="span"
-            cursor={false}
-            repeat={1}
-            // @ts-ignore
-            speed={250}
-          />
-          <Text py="2">
-            My name is Chauhan Harsh, I'm a front-end developer based in
-            Torquay, Devon, UK. I have developed many types of front-ends from
-            well know DJ applications to Ecommerce booking platforms.
-          </Text>
-          <Text py="2">
-            I'm passionate about cutting-edge, pixel-perfect, beautiful
-            interfaces and intuitively implemented UX.{" "}
-          </Text>
+          {currIndex === 0 && <AboutMe />}
+          {currIndex === 1 && <GalleryApp />}
+          {currIndex === 2 && <PixelLite />}
+          {currIndex === 3 && <PixelPace />}
+          {currIndex === 4 && <InvoiceApp />}
         </GridItem>
-        <GridItem colSpan={4} className={containerStyle}>
+        <GridItem
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          colSpan={4}
+          className={containerStyle}
+        >
           <Text fontSize="3rem">Projects</Text>
-          <Text>Pixel Pace</Text>
-          <Text>Invoice App</Text>
-          <Text>Gallary App</Text>
-          <Text>Pixel Lite</Text>
+          <Text
+            mt="1"
+            _hover={{ cursor: "pointer" }}
+            sx={{ textDecoration: "underline" }}
+            onClick={changeCurrIndex(1)}
+          >
+            Gallary App
+          </Text>
+          <Text
+            mt="1"
+            _hover={{ cursor: "pointer" }}
+            sx={{ textDecoration: "underline" }}
+            onClick={changeCurrIndex(2)}
+          >
+            Pixel Lite
+          </Text>
+          <Text
+            mt="1"
+            _hover={{ cursor: "pointer" }}
+            sx={{ textDecoration: "underline" }}
+            onClick={changeCurrIndex(3)}
+          >
+            Pixel Pace
+          </Text>
+          <Text
+            mt="1"
+            _hover={{ cursor: "pointer" }}
+            sx={{ textDecoration: "underline" }}
+            onClick={changeCurrIndex(4)}
+          >
+            Invoice App
+          </Text>
         </GridItem>
       </Grid>
     </AppContainer>
