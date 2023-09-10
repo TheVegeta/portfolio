@@ -15,7 +15,7 @@ const containerStyle = css`
   min-height: 60vh;
 
   & {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
   }
 
   @media (min-width: 992px) {

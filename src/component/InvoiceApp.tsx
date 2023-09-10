@@ -16,6 +16,14 @@ const TypedStyleCss = css`
   }
 `;
 
+const textStyle = css`
+  width: 85%;
+
+  @media (min-width: 992px) {
+    width: unset;
+  }
+`;
+
 const InvoiceApp = () => {
   return (
     <>
@@ -28,11 +36,11 @@ const InvoiceApp = () => {
         // @ts-ignore
         speed={250}
       />
-      <Text py="2">
+      <Text className={textStyle} py="2">
         Basically, I built this application to challenge myself on designing
         lavel.
       </Text>
-      <Text py="2">
+      <Text className={textStyle} py="2">
         This challenge is provided by the front-end mentor on their website. I
         have implemented invoice management with inventory and completed this
         challenge by using Mantine Ui, Styled Component, Formik,formik and
