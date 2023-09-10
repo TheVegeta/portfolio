@@ -16,6 +16,15 @@ const TypedStyleCss = css`
   }
 `;
 
+const linkContainerStyle = css`
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: 576px) {
+    gap: 1rem;
+  }
+`;
+
 const GalleryApp = () => {
   return (
     <>
@@ -37,7 +46,7 @@ const GalleryApp = () => {
         images, and add other people's images to their favorites if they like
         them.
       </Text>
-      <Box display="flex" gap="1rem">
+      <Box className={linkContainerStyle}>
         <Text
           as="a"
           href="https://github.com/TheVegeta/gallary-app-next"
