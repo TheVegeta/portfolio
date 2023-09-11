@@ -23,9 +23,6 @@ const containerStyle = css`
       margin-top: unset;
     }
   }
-
-  @media (min-width: 1400px) {
-  }
 `;
 
 const bottomContainerStyle = css`
