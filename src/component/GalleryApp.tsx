@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, useToast } from "@chakra-ui/react";
 import { css } from "@emotion/css";
 import { FaEarthAsia, FaGithub } from "react-icons/fa6";
 import { TypeAnimation } from "react-type-animation";
@@ -26,6 +26,8 @@ const linkContainerStyle = css`
 `;
 
 const GalleryApp = () => {
+  const toast = useToast();
+
   return (
     <>
       <TypeAnimation
@@ -82,6 +84,14 @@ const GalleryApp = () => {
           display="flex"
           alignItems="center"
           gap="0.5rem"
+          onClick={() => {
+            toast({
+              title: "I will update the link shortly.",
+              status: "success",
+              duration: 9000,
+              isClosable: true,
+            });
+          }}
         >
           <FaEarthAsia />
           Demo

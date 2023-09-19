@@ -80,12 +80,20 @@ const App = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            marginTop: "2rem",
+            marginTop: "-1.5rem",
           }}
           colSpan={4}
           className={bottomContainerStyle}
         >
           <Text fontSize="3rem">Projects</Text>
+          <Text
+            mt="1"
+            _hover={{ cursor: "pointer" }}
+            sx={{ textDecoration: "underline" }}
+            onClick={changeCurrIndex(3)}
+          >
+            Pixel Pace
+          </Text>
           <Text
             mt="1"
             _hover={{ cursor: "pointer" }}
@@ -102,14 +110,7 @@ const App = () => {
           >
             Pixel Lite
           </Text>
-          <Text
-            mt="1"
-            _hover={{ cursor: "pointer" }}
-            sx={{ textDecoration: "underline" }}
-            onClick={changeCurrIndex(3)}
-          >
-            Pixel Pace
-          </Text>
+
           <Text
             mt="1"
             _hover={{ cursor: "pointer" }}
