@@ -80,7 +80,7 @@ const App = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            marginTop: "-1.5rem",
+            marginTop: "-0.5rem",
           }}
           colSpan={4}
           className={bottomContainerStyle}

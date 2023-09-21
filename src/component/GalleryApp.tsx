@@ -79,19 +79,13 @@ const GalleryApp = () => {
 
         <Text
           as="a"
+          href="https://gallery-kf0q.onrender.com/"
+          target="_blank"
           fontSize="1.3rem"
           py="2"
           display="flex"
           alignItems="center"
           gap="0.5rem"
-          onClick={() => {
-            toast({
-              title: "I will update the link shortly.",
-              status: "success",
-              duration: 9000,
-              isClosable: true,
-            });
-          }}
         >
           <FaEarthAsia />
           Demo
